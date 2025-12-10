@@ -110,10 +110,11 @@ function initEvents(){
   });
 }
 
-document.addEventListener("DOMContentLoaded", async () => {
-  await loadAllData();
-  await createNewInvoice("retail");
-  initEvents();
-  initSync();
-  await refreshDashboard();
-});
+/* تم حذف تهيئة التطبيق من هنا – أصبحت بعد تسجيل الدخول في auth.js */
+// document.addEventListener("DOMContentLoaded", async () => {
+//   await loadAllData();
+//   await createNewInvoice("retail");
+//   initEvents();
+//   initSync();
+//   await refreshDashboard();
+// });
