@@ -2,19 +2,19 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8" />
-  <title>نظام فواتير ومخزون - SheetDB + مخزون ديناميكي</title>
+  <title>نظام فواتير ومخزون -محلات ابو طعيمة للملابس</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-<body>
-<!-- شاشة تسجيل الدخول -->
+
+<!-- شاشة تسجيل الدخول - تغطي التطبيق بالكامل قبل الدخول -->
 <div id="login-screen" style="
   position:fixed;inset:0;background:#020617;color:#f9fafb;
   display:flex;flex-direction:column;justify-content:center;
   align-items:center;gap:14px;font-family:Segoe UI, Tahoma, sans-serif;
   z-index:9999;">
-  <h2 style="margin:0;">تسجيل الدخول للنظام</h2>
+  <h2 style="margin:0 0 8px;">تسجيل الدخول للنظام</h2>
 
   <form id="login-form" style="display:flex;flex-direction:column;gap:8px;min-width:260px;">
     <input id="login-email" type="email" required
@@ -37,30 +37,30 @@
 
 <div class="app-shell">
   <header>
-  <div class="brand">
-    <div class="brand-logo"></div>
-    <div>
-      <div>نظام الفواتير والمخزون</div>
-      <div class="brand-sub">مخزون ديناميكي بدون عمود stock - SheetDB + أوفلاين</div>
+    <div class="brand">
+      <div class="brand-logo"></div>
+      <div>
+        <div>نظام الفواتير والمخزون</div>
+        <div class="brand-sub">نظام فواتير ومخزون -محلات ابو طعيمة للملابس</div>
+      </div>
     </div>
-  </div>
 
-  <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
-    <div style="font-size:11px;color:#9ca3af;">
-      المستخدم: <span id="current-user-email">غير مسجل</span>
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end;flex:1;">
+      <div style="font-size:11px;color:#9ca3af;">
+        المستخدم: <span id="current-user-email">غير مسجل</span>
+      </div>
+      <nav class="nav-buttons">
+        <button class="nav-btn active" data-view="invoice-retail">فاتورة الزبون</button>
+        <button class="nav-btn" data-view="invoice-wholesale">فاتورة التاجر</button>
+        <button class="nav-btn" data-view="statement">كشف حساب</button>
+        <button class="nav-btn" data-view="stock">إدارة الأصناف</button>
+        <button class="nav-btn" data-view="dashboard">لوحة التحكم</button>
+      </nav>
+      <button id="btn-logout" class="nav-btn" style="background:#b91c1c;">
+        تسجيل الخروج
+      </button>
     </div>
-    <nav class="nav-buttons">
-      <button class="nav-btn active" data-view="invoice-retail">فاتورة الزبون</button>
-      <button class="nav-btn" data-view="invoice-wholesale">فاتورة التاجر</button>
-      <button class="nav-btn" data-view="statement">كشف حساب</button>
-      <button class="nav-btn" data-view="stock">إدارة الأصناف</button>
-      <button class="nav-btn" data-view="dashboard">لوحة التحكم</button>
-    </nav>
-    <button id="btn-logout" class="nav-btn" style="background:#b91c1c;">
-      تسجيل الخروج
-    </button>
-  </div>
-</header>
+  </header>
 
   <main>
     <!-- فاتورة الزبون -->
@@ -526,7 +526,8 @@
 
 <datalist id="customers-list"></datalist>
 <div id="search-suggestions" class="search-dropdown hidden"></div>
-<script type="module" src="assets/js/auth.js"></script>
+
+<!-- سكربتات النظام -->
 <script src="assets/js/utils.js"></script>
 <script src="assets/js/data.js"></script>
 <script src="assets/js/invoice.js"></script>
@@ -536,5 +537,8 @@
 <script src="assets/js/print.js"></script>
 <script src="assets/js/sync.js"></script>
 <script src="assets/js/app.js"></script>
+
+<!-- سكربت الحماية وتسجيل الدخول - يجب أن يكون الأخير -->
+<script type="module" src="assets/js/auth.js"></script>
 </body>
 </html>
